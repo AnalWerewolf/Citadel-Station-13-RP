@@ -2588,7 +2588,7 @@
 #include "code\modules\projectiles\projectile\beams_vr.dm"
 #include "code\modules\projectiles\projectile\blob.dm"
 #include "code\modules\projectiles\projectile\bullets.dm"
-#include "code\modules\projectiles\projectile\bullets_vr.dm"
+#include "code\modules\projectiles\projectile\bullettypes.dm"
 #include "code\modules\projectiles\projectile\change.dm"
 #include "code\modules\projectiles\projectile\energy.dm"
 #include "code\modules\projectiles\projectile\energy_vr.dm"

@@ -8,29 +8,29 @@
 
 /datum/category_item/autolathe/arms/shotgun_blanks
 	name = "ammunition (12g, blank)"
-	path =/obj/item/ammo_casing/a12g/blank
+	path =/obj/item/ammo_casing/c12g/shotgun/blank
 
 /datum/category_item/autolathe/arms/shotgun_beanbag
 	name = "ammunition (12g, beanbag)"
-	path =/obj/item/ammo_casing/a12g/beanbag
+	path =/obj/item/ammo_casing/c12g/shotgun/beanbag
 
 /datum/category_item/autolathe/arms/shotgun_flash
 	name = "ammunition (12g, flash)"
-	path =/obj/item/ammo_casing/a12g/flash
+	path =/obj/item/ammo_casing/c12g/shotgun/flash
 
 /datum/category_item/autolathe/arms/shotgun
 	name = "ammunition (12g, slug)"
-	path =/obj/item/ammo_casing/a12g
+	path =/obj/item/ammo_casing/c12g/shotgun
 	hidden = 1
 
 /datum/category_item/autolathe/arms/shotgun_pellet
 	name = "ammunition (12g, pellet)"
-	path =/obj/item/ammo_casing/a12g/pellet
+	path =/obj/item/ammo_casing/c12g/shotgun/pellet
 	hidden = 1
 
 /datum/category_item/autolathe/arms/stunshell
 	name = "ammunition (stun cartridge, shotgun)"
-	path =/obj/item/ammo_casing/a12g/stunshell
+	path =/obj/item/ammo_casing/c12g/shotgun/stunshell
 	hidden = 1
 
 //////////////////

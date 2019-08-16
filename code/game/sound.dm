@@ -138,9 +138,24 @@
 			if ("keyboard") soundin = pick('sound/effects/keyboard/keyboard1.ogg','sound/effects/keyboard/keyboard2.ogg','sound/effects/keyboard/keyboard3.ogg', 'sound/effects/keyboard/keyboard4.ogg')
 			if ("button") soundin = pick('sound/machines/button1.ogg','sound/machines/button2.ogg','sound/machines/button3.ogg','sound/machines/button4.ogg')
 			if ("switch") soundin = pick('sound/machines/switch1.ogg','sound/machines/switch2.ogg','sound/machines/switch3.ogg','sound/machines/switch4.ogg')
-			if ("casing_sound") soundin = pick('sound/weapons/casingfall1.ogg','sound/weapons/casingfall2.ogg','sound/weapons/casingfall3.ogg')
 	return soundin
 
-//Are these even used?
+//Are these even used? // Bruh...
 var/list/keyboard_sound = list ('sound/effects/keyboard/keyboard1.ogg','sound/effects/keyboard/keyboard2.ogg','sound/effects/keyboard/keyboard3.ogg', 'sound/effects/keyboard/keyboard4.ogg')
 var/list/bodyfall_sound = list('sound/effects/bodyfall1.ogg','sound/effects/bodyfall2.ogg','sound/effects/bodyfall3.ogg','sound/effects/bodyfall4.ogg')
+
+// Eris port. Wow we are shitcode.
+var/list/miss_sound = list (
+	'sound/weapons/guns/misc/miss.ogg','sound/weapons/guns/misc/miss2.ogg',
+	'sound/weapons/guns/misc/miss3.ogg','sound/weapons/guns/misc/miss4.ogg'
+)
+var/list/ric_sound = list (
+	'sound/weapons/guns/misc/ric1.ogg','sound/weapons/guns/misc/ric2.ogg',
+	'sound/weapons/guns/misc/ric3.ogg','sound/weapons/guns/misc/ric4.ogg',
+	'sound/weapons/guns/misc/ric5.ogg'
+)
+var/list/casing_sound = list (
+	'sound/weapons/guns/misc/casingfall1.ogg','sound/weapons/guns/misc/casingfall2.ogg',
+	'sound/weapons/guns/misc/casingfall3.ogg'
+)
+var/list/bullet_hit_object_sound = list('sound/weapons/guns/misc/bullethit.ogg')

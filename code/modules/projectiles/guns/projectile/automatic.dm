@@ -3,8 +3,8 @@
 	desc = "A small SMG. You really shouldn't be able to get this gun. Uses 9mm rounds."
 	icon_state = "c05r"	//Used because it's not used anywhere else
 	load_method = SPEEDLOADER
-	ammo_type = /obj/item/ammo_casing/a9mm
-	projectile_type = /obj/item/projectile/bullet/pistol
+	ammo_type = /obj/item/ammo_casing/c9mm
+	projectile_type = /obj/item/projectile/bullet/p9mm
 
 //Burst is the number of bullets fired; Fire delay is the time you have to wait to shoot the gun again, Move delay is the same but for moving after shooting. .
 //Burst accuracy is the accuracy of each bullet fired in the burst. Dispersion is how much the bullets will 'spread' away from where you aimed.
@@ -14,7 +14,7 @@
 		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=4,    burst_accuracy=list(0,-15,-15), dispersion=list(0.0, 0.6, 1.0)))
 
 /obj/item/weapon/gun/projectile/automatic/saber //Fixed it
-	name = "prototype SMG"
+	name = "\improper Saber"
 	desc = "A protoype lightweight, fast firing gun. Uses 9mm rounds."
 	icon = 'icons/obj/gun.dmi'
 	icon_state = "saber"//Still ugly
@@ -24,9 +24,9 @@
 	caliber = "9mm"
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 2)
 	slot_flags = SLOT_BELT
-	magazine_type = /obj/item/ammo_magazine/m9mmR/saber
-	allowed_magazines = list(/obj/item/ammo_magazine/m9mmR/saber, /obj/item/ammo_magazine/m9mmR/saber/ap)
-	projectile_type = /obj/item/projectile/bullet/pistol
+	magazine_type = /obj/item/ammo_magazine/m9mm/saber
+	allowed_magazines = list(/obj/item/ammo_magazine/m9mm/saber)
+	projectile_type = /obj/item/projectile/bullet/p9mm
 	multi_aim = 1
 	burst_delay = 2
 
@@ -37,12 +37,12 @@
 	)
 
 /obj/item/weapon/gun/projectile/automatic/c20r
-	name = "submachine gun"
+	name = "\improper SA C-20r"
 	desc = "The C-20r is a lightweight and rapid firing SMG, for when you REALLY need someone dead. It has 'Scarborough Arms - Per falcis, per pravitas' inscribed on the stock. Uses 10mm rounds."
 	icon_state = "c20r"
 	item_state = "c20r"
 	w_class = ITEMSIZE_NORMAL
-	force = 10
+	force = 15
 	caliber = "10mm"
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
 	slot_flags = SLOT_BELT|SLOT_BACK
@@ -50,7 +50,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/m10mm
 	allowed_magazines = list(/obj/item/ammo_magazine/m10mm)
-	projectile_type = /obj/item/projectile/bullet/pistol/medium
+	projectile_type = /obj/item/projectile/bullet/p10mm
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
@@ -65,21 +65,21 @@
 	return
 
 /obj/item/weapon/gun/projectile/automatic/sts35
-	name = "assault rifle"
-	desc = "The rugged STS-35 is a durable automatic weapon of a make popular on the frontier worlds. Uses 5.45mm rounds."
+	name = "\improper STS-35"
+	desc = "The rugged STS-35 is a durable automatic weapon of a make popular on the frontier worlds. Uses 5.56mm rounds."
 	icon_state = "arifle"
 	item_state = "arifle"
 	wielded_item_state = "arifle-wielded"
 	item_state = null
 	w_class = ITEMSIZE_LARGE
-	force = 10
-	caliber = "5.45mm"
+	force = 15
+	caliber = "5.56mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/m545
-	allowed_magazines = list(/obj/item/ammo_magazine/m545)
-	projectile_type = /obj/item/projectile/bullet/rifle/a545
+	magazine_type = /obj/item/ammo_magazine/m556
+	allowed_magazines = list(/obj/item/ammo_magazine/m556, /obj/item/ammo_magazine/m556/small)
+	projectile_type = /obj/item/projectile/bullet/p556
 
 //	one_handed_penalty = 30
 
@@ -91,14 +91,14 @@
 
 /obj/item/weapon/gun/projectile/automatic/sts35/update_icon(var/ignore_inhands)
 	..()
-	if(istype(ammo_magazine,/obj/item/ammo_magazine/m545/small))
+	if(istype(ammo_magazine,/obj/item/ammo_magazine/m556/small))
 		icon_state = "arifle-small" // If using the small magazines, use the small magazine sprite.
 	else
 		icon_state = (ammo_magazine)? "arifle" : "arifle-empty"
 	if(!ignore_inhands) update_held_icon()
 
 /obj/item/weapon/gun/projectile/automatic/wt550
-	name = "machine pistol"
+	name = "\improper WT 550 Saber"
 	desc = "The WT550 Saber is a cheap self-defense weapon mass-produced by Ward-Takahashi for paramilitary and private use. Uses 9mm rounds."
 	icon_state = "wt550"
 	item_state = "wt550"
@@ -111,7 +111,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/m9mmt/rubber
 	allowed_magazines = list(/obj/item/ammo_magazine/m9mmt)
-	projectile_type = /obj/item/projectile/bullet/pistol/medium
+	projectile_type = /obj/item/projectile/bullet/p9mm
 
 /obj/item/weapon/gun/projectile/automatic/wt550/update_icon()
 	..()
@@ -122,13 +122,13 @@
 	return
 
 /obj/item/weapon/gun/projectile/automatic/z8
-	name = "designated marksman rifle"
+	name = "\improper ZF Z8 Bulldog"
 	desc = "The Z8 Bulldog is an older model designated marksman rifle, made by the now defunct Zendai Foundries. Makes you feel like a space marine when you hold it, even though it can only hold 10 round magazines. Uses 7.62mm rounds and has an under barrel grenade launcher."
 	icon_state = "carbine" // This isn't a carbine. :T
 	item_state = "z8carbine"
 	wielded_item_state = "z8carbine-wielded"
 	w_class = ITEMSIZE_LARGE
-	force = 10
+	force = 15
 	caliber = "7.62mm"
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 3)
 	fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -136,7 +136,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/m762
 	allowed_magazines = list(/obj/item/ammo_magazine/m762)
-	projectile_type = /obj/item/projectile/bullet/rifle/a762
+	projectile_type = /obj/item/projectile/bullet/p762
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
 
@@ -193,22 +193,22 @@
 		user << "\The [launcher] is empty."
 
 /obj/item/weapon/gun/projectile/automatic/l6_saw
-	name = "light machine gun"
-	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. 'Aussec Armoury-2531' is engraved on the reciever. Uses 5.45mm rounds. It's also compatible with magazines from STS-35 assault rifles."
+	name = "\improper AA L6 SAW"
+	desc = "A rather traditionally made L6 SAW with a pleasantly lacquered wooden pistol grip. 'Aussec Armoury-2531' is engraved on the reciever. Uses 5.56mm rounds and box magazines."
 	icon_state = "l6closed100"
 	item_state = "l6closed"
 	w_class = ITEMSIZE_LARGE
-	force = 10
+	force = 20
 	slot_flags = 0
 	max_shells = 50
-	caliber = "5.45mm"
+	caliber = "5.56mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 2)
 	slot_flags = SLOT_BACK
 	fire_sound = 'sound/weapons/machinegun.ogg'
 	load_method = MAGAZINE
-	magazine_type = /obj/item/ammo_magazine/m545saw
-	allowed_magazines = list(/obj/item/ammo_magazine/m545saw, /obj/item/ammo_magazine/m545)
-	projectile_type = /obj/item/projectile/bullet/rifle/a545
+	magazine_type = /obj/item/ammo_magazine/m556saw
+	allowed_magazines = list(/obj/item/ammo_magazine/m556saw)
+	projectile_type = /obj/item/projectile/bullet/p556
 
 //	one_handed_penalty = 90
 
@@ -254,10 +254,7 @@
 		return ..() //once open, behave like normal
 
 /obj/item/weapon/gun/projectile/automatic/l6_saw/update_icon()
-	if(istype(ammo_magazine,/obj/item/ammo_magazine/m762))
-		icon_state = "l6[cover_open ? "open" : "closed"]mag"
-		item_state = icon_state
-	else
+	if(istype(ammo_magazine,/obj/item/ammo_magazine/m556saw))
 		icon_state = "l6[cover_open ? "open" : "closed"][ammo_magazine ? round(ammo_magazine.stored_ammo.len, 25) : "-empty"]"
 		item_state = "l6[cover_open ? "open" : "closed"][ammo_magazine ? "" : "-empty"]"
 	update_held_icon()
@@ -275,12 +272,12 @@
 	..()
 
 /obj/item/weapon/gun/projectile/automatic/as24
-	name = "automatic shotgun"
+	name = "\improper GP AS-24"
 	desc = "The AS-24 is a rugged looking automatic shotgun produced for the military by Gurov Projectile Weapons LLC. For very obvious reasons, it's illegal to own in many juristictions. Uses 12g rounds."
 	icon_state = "ashot"
 	item_state = null
 	w_class = ITEMSIZE_LARGE
-	force = 10
+	force = 15
 	caliber = "12g"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
 	slot_flags = SLOT_BACK
@@ -315,6 +312,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2, TECH_ILLEGAL = 5)
 	magazine_type = /obj/item/ammo_magazine/m45uzi
 	allowed_magazines = list(/obj/item/ammo_magazine/m45uzi)
+	projectile_type = /obj/item/projectile/bullet/p45
 
 	firemodes = list(
 		list(mode_name="semiauto", burst=1, fire_delay=0),
@@ -329,7 +327,7 @@
 		icon_state = "mini-uzi-empty"
 
 /obj/item/weapon/gun/projectile/automatic/p90
-	name = "personal defense weapon"
+	name = "\improper HI H90K"
 	desc = "The H90K is a compact, large capacity submachine gun produced by Hephaestus Industries. Despite its fierce reputation, it still manages to feel like a toy. Uses 9mm rounds."
 	icon_state = "p90smg"
 	item_state = "p90"
@@ -340,7 +338,8 @@
 	fire_sound = 'sound/weapons/Gunshot_light.ogg'
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/m9mmp90
-	allowed_magazines = list(/obj/item/ammo_magazine/m9mmp90, /obj/item/ammo_magazine/m9mmt) // ToDo: New sprite for the different mag.
+	allowed_magazines = list(/obj/item/ammo_magazine/m9mmp90)
+	projectile_type = /obj/item/projectile/bullet/p9mm
 
 	firemodes = list(
 		list(mode_name="semiauto", burst=1, fire_delay=0),
@@ -361,6 +360,7 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/m45tommy
 	allowed_magazines = list(/obj/item/ammo_magazine/m45tommy, /obj/item/ammo_magazine/m45tommydrum)
+	projectile_type = /obj/item/projectile/bullet/p45
 
 	firemodes = list(
 		list(mode_name="semiauto", burst=1, fire_delay=0),
@@ -373,19 +373,19 @@
 //	update_held_icon()
 
 /obj/item/weapon/gun/projectile/automatic/bullpup // Admin abuse assault rifle. ToDo: Make this less shit. Maybe remove its autofire, and make it spawn with only 10 rounds at start.
-	name = "bullpup rifle"
+	name = "\improper GP 3000"
 	desc = "The bullpup configured GP3000 is a battle rifle produced by Gurov Projectile Weapons LLC. It is sold almost exclusively to standing armies. Uses 7.62mm rounds."
 	icon_state = "bullpup-small"
 	item_state = "bullpup"
 	w_class = ITEMSIZE_LARGE
-	force = 10
+	force = 20
 	caliber = "7.62mm"
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 1, TECH_ILLEGAL = 4)
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/m762
 	allowed_magazines = list(/obj/item/ammo_magazine/m762, /obj/item/ammo_magazine/m762m)
-	projectile_type = /obj/item/projectile/bullet/rifle/a762
+	projectile_type = /obj/item/projectile/bullet/p762
 
 //	one_handed_penalty = 45
 

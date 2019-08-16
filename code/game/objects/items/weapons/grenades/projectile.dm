@@ -1,9 +1,9 @@
 /obj/item/weapon/grenade/shooter
-	name = "projectile grenade"	// I have no idea what else to call this, but the base type should never be used
+	name = "projectile grenade"
 	icon_state = "frggrenade"
 	item_state = "grenade"
 
-	var/list/projectile_types = list(/obj/item/projectile/bullet/pistol/rubber)	// What sorts of projectiles might we make?
+	var/list/projectile_types = list(/obj/item/projectile/bullet/p44/rubber)	// What sorts of projectiles might we make?
 
 	//The radius of the circle used to launch projectiles. Lower values mean less projectiles are used but if set too low gaps may appear in the spread pattern
 	var/spread_range = 7
@@ -24,33 +24,23 @@
 
 
 /obj/item/weapon/grenade/shooter/rubber
-	name = "rubber pellet grenade"
+	name = "\improper 'Stinger' grenade"
 	desc = "An anti-riot grenade that fires a cloud of rubber projectiles upon detonation."
-	projectile_types = list(/obj/item/projectile/bullet/pistol/rubber)
+	projectile_types = list(/obj/item/projectile/bullet/p44/rubber)
 
 // Exists mostly so I don't have to copy+paste the sprite vars to a billion things
 /obj/item/weapon/grenade/shooter/energy
 	icon_state = "flashbang"
 	item_state = "flashbang"
-	spread_range = 3	// Because dear god
-
-/obj/item/weapon/grenade/shooter/energy/laser
-	name = "laser grenade"
-	desc = "A horrifically dangerous rave in a can."
-	projectile_types = list(/obj/item/projectile/beam/midlaser)
+	spread_range = 7	// Because yes
 
 /obj/item/weapon/grenade/shooter/energy/flash
 	name = "flash grenade"
 	desc = "A grenade that creates a large number of flashes upon detonation."
 	projectile_types = list(/obj/item/projectile/energy/flash)
 
-/obj/item/weapon/grenade/shooter/energy/tesla
-	name = "tesla grenade"
-	projectile_types = list(/obj/item/projectile/beam/chain_lightning/lesser)
-
-
 // This is just fragmentate, but less specific. Don't know how to make either of them less awful, at the moment
-/obj/proc/launch_many_projectiles(var/turf/T=get_turf(src), var/spreading_range = 5, var/list/projectiletypes=list(/obj/item/projectile/bullet/pistol/rubber))
+/obj/proc/launch_many_projectiles(var/turf/T=get_turf(src), var/spreading_range = 5, var/list/projectiletypes=list(/obj/item/projectile/bullet/p44/rubber))
 	set waitfor = 0
 	var/list/target_turfs = getcircle(T, spreading_range)
 

@@ -1,3 +1,4 @@
+/* Yeah no. Maybe someday. Citadel change. - AnalWerewolf Eris Port
 //This will likely drive me insane, but fuck it. Let's give it a shot. -k22
 //This was heavily assisted by MoondancerPony
 /obj/item/weapon/gun/energy/modular
@@ -172,3 +173,4 @@
 	cell_type = /obj/item/weapon/cell //We're bigger. We can use much larger power cells.
 	origin_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 6, TECH_MATERIAL = 5, TECH_BLUESPACE = 4) //its a damn cannon capable of holding a huge amount of parts.
 	burst_delay = 4 //preventing extreme silliness.
+*/
